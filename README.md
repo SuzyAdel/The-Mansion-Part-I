@@ -18,3 +18,8 @@
 made it slightly overlapping 
 ![image](https://github.com/user-attachments/assets/39cd6313-bf05-40d4-86a9-f75cabd4f7da)
 
+
+# Particale Effect 
+!. rain and fog , made them follow both the player and the camera using code 'WeatherFollower'
+![image](https://github.com/user-attachments/assets/5ee2b552-4285-4ba3-81ad-c369a2a3065d)
+
