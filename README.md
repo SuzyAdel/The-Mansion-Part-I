@@ -20,6 +20,12 @@ made it slightly overlapping
 
 
 # Particale Effect 
-!. rain and fog , made them follow both the player and the camera using code 'WeatherFollower'
+1.  rain and fog , made them follow both the player and the camera using code 'WeatherFollower'
+2.  used late update rather than update because
+   | Method         | When it runs    | Use case                                    |
+| -------------- | --------------- | ------------------------------------------- |
+| `Update()`     | Before movement | For movement logic / physics inputs         |
+| `LateUpdate()` | After movement  | For following / syncing with moving targets |
+
 ![image](https://github.com/user-attachments/assets/5ee2b552-4285-4ba3-81ad-c369a2a3065d)
 
