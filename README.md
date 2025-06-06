@@ -32,6 +32,19 @@ made it slightly overlapping
 
 
 # Thunder using LIGHT ONLY 
+
+1. added 3 diffeernt directional lights , with different color
+2. made 3 flicker ranges repetation to simulate natural and variation of thunder
+3. added a random funtion to pick from 2 thunder sounds
+4. added a random funtion to chose delay
+5. added a soft lowering voice to the thunder sounds
+6. added a 10 sec timer for repetation of thunder
+7. played with intensities 
 ![image](https://github.com/user-attachments/assets/04484b40-ede8-45e8-84bf-a85dc0185670)
+
+# Oak Trees 
+
+
+![image](https://github.com/user-attachments/assets/99b8854b-44f1-4756-8a0b-da2a82e20f67)
 
 
