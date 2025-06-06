@@ -11,7 +11,7 @@
    
 ![image](https://github.com/user-attachments/assets/56796bf1-1cfe-429e-9f3c-e1c27ebb2413)
 
-#Water Shader 
+# Water Shader 
 
 ![image](https://github.com/user-attachments/assets/02728518-8770-4282-aea5-d3d5ee4bf8ce)
 
@@ -22,10 +22,16 @@ made it slightly overlapping
 # Particale Effect 
 1.  rain and fog , made them follow both the player and the camera using code 'WeatherFollower'
 2.  used late update rather than update because
+   
    | Method         | When it runs    | Use case                                    |
 | -------------- | --------------- | ------------------------------------------- |
 | `Update()`     | Before movement | For movement logic / physics inputs         |
 | `LateUpdate()` | After movement  | For following / syncing with moving targets |
 
 ![image](https://github.com/user-attachments/assets/5ee2b552-4285-4ba3-81ad-c369a2a3065d)
+
+
+# Thunder using LIGHT ONLY 
+![image](https://github.com/user-attachments/assets/04484b40-ede8-45e8-84bf-a85dc0185670)
+
 
