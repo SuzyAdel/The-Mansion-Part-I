@@ -49,3 +49,9 @@ made it slightly overlapping
 
 
 ![image](https://github.com/user-attachments/assets/d9506f57-0f03-49e0-812c-c02821c08a66)
+
+# Key & Magical circle 
+1. down scaled the key and increased the circle sclae
+2. 
+![image](https://github.com/user-attachments/assets/5e07fc46-0ad3-4f4b-b5af-d93c468df45c)
+
