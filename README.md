@@ -43,8 +43,9 @@ made it slightly overlapping
 ![image](https://github.com/user-attachments/assets/04484b40-ede8-45e8-84bf-a85dc0185670)
 
 # Oak Trees 
-
+1. script that spawns 500 trees when i attached the script 'OakTreeSpawner'
 
 ![image](https://github.com/user-attachments/assets/99b8854b-44f1-4756-8a0b-da2a82e20f67)
 
 
+![image](https://github.com/user-attachments/assets/d9506f57-0f03-49e0-812c-c02821c08a66)
