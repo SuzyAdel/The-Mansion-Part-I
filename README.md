@@ -10,3 +10,11 @@
 1. added skyybox that rotates using the script 'SkyboxRotator'
    
 ![image](https://github.com/user-attachments/assets/56796bf1-1cfe-429e-9f3c-e1c27ebb2413)
+
+#Water Shader 
+
+![image](https://github.com/user-attachments/assets/02728518-8770-4282-aea5-d3d5ee4bf8ce)
+
+made it slightly overlapping 
+![image](https://github.com/user-attachments/assets/39cd6313-bf05-40d4-86a9-f75cabd4f7da)
+
