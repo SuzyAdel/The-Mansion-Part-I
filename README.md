@@ -53,5 +53,6 @@ made it slightly overlapping
 # Key & Magical circle 
 1. down scaled the key and increased the circle sclae
 2. 
-![image](https://github.com/user-attachments/assets/5e07fc46-0ad3-4f4b-b5af-d93c468df45c)
+![image](https://github.com/user-attachments/assets/876ad7aa-548e-47df-ae48-cac5ab069bd7)
+
 
