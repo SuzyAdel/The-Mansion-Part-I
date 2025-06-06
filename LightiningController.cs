@@ -1,6 +1,7 @@
-﻿// YouTube Tutorial Refrence: https://www.youtube.com/watch?v=8b1a9c4d2f0
-// plus my tweaks 
+// YouTube Tutorial Refrence: https://www.youtube.com/watch?v=8b1a9c4d2f0
+// plus my tweaks , flickering , 2 audios , directional light detials , timmer, sound delay  
 using UnityEngine;
+using System.Collections;
 
 public class LightiningController : MonoBehaviour
 {
@@ -8,13 +9,11 @@ public class LightiningController : MonoBehaviour
     public GameObject LightingTWO;
     public GameObject LightingTHREE;
 
-
     public GameObject AudioONE;
     public GameObject AudioTWO;
 
-
     private float timer = 0f;
-    private float thunderInterval = 30f; // every 30 seconds +
+    private float thunderInterval = 10f; // every 10 seconds - higjj frequency thunder
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -25,6 +24,9 @@ public class LightiningController : MonoBehaviour
 
         AudioONE.SetActive(false);
         AudioTWO.SetActive(false);
+
+        // Immediately trigger first lightning when game starts
+        Invoke("CallLighting", 1f);
     }
 
     // Update is called once per frame
@@ -38,46 +40,66 @@ public class LightiningController : MonoBehaviour
             Invoke("CallLighting", Random.Range(0.5f, 1.5f)); // small delay before light starts (30 sec to 31.5)
         }
     }
+
     void CallLighting()
     {
         // randomly select one of the three lighting objects, each differnt duration 
         int r = Random.Range(1, 4); // Random number between 1 and 3
-        float flashDuration = 0.0f;
+        GameObject selectedLighting = null;
+
         switch (r)
         {
             case 1:
-                LightingONE.SetActive(true);
-                //CallAudio();
-                //Invoke("EndLighting", 0.125f); //Slowest
-                flashDuration = 0.125f;
+                selectedLighting = LightingONE;
                 break;
             case 2:
-                LightingTWO.SetActive(true);
-                //CallAudio();
-                //Invoke("EndLighting", 0.105f);// Medium 
-                flashDuration = 0.105f;
+                selectedLighting = LightingTWO;
                 break;
             case 3:
-                LightingTHREE.SetActive(true);
-                //CallAudio();
-                //Invoke("EndLighting", 0.80f);// Quick
-                flashDuration = 0.80f;
-
+                selectedLighting = LightingTHREE;
                 break;
         }
-        // Delay sound AFTER the flash starts
-        Invoke("CallAudio", flashDuration + Random.Range(0.5f, 2.5f));
 
-        // Turn off lights after brief flash
-        Invoke("EndLighting", flashDuration);
+        StartCoroutine(FlashLightning(selectedLighting, r));
     }
 
-    void EndLighting()
+    IEnumerator FlashLightning(GameObject lightObject, int type)
     {
-        // for simplicity set all with 0 
+        // Flickering effect based on lightning type
+        switch (type)
+        {
+            case 1: // Slowest flicker
+                lightObject.SetActive(true);
+                yield return new WaitForSeconds(0.1f);
+                lightObject.SetActive(false);
+                yield return new WaitForSeconds(0.05f);
+                lightObject.SetActive(true);
+                yield return new WaitForSeconds(0.15f);
+                break;
+
+            case 2: // Medium flicker
+                lightObject.SetActive(true);
+                yield return new WaitForSeconds(0.08f);
+                lightObject.SetActive(false);
+                yield return new WaitForSeconds(0.03f);
+                lightObject.SetActive(true);
+                yield return new WaitForSeconds(0.07f);
+                break;
+
+            case 3: // Quick burst
+                lightObject.SetActive(true);
+                yield return new WaitForSeconds(0.06f);
+                break;
+        }
+
+        // Turn off all lighting objects to ensure clean reset
         LightingONE.SetActive(false);
         LightingTWO.SetActive(false);
         LightingTHREE.SetActive(false);
+
+        // Shorter and more realistic delay between lightning and thunder
+        float delayAfterFlash = Random.Range(0.1f, 0.3f);
+        Invoke("CallAudio", delayAfterFlash);
     }
 
     void CallAudio()
@@ -88,21 +110,22 @@ public class LightiningController : MonoBehaviour
         {
             case 1:
                 AudioONE.SetActive(true);
+                Invoke("EndAudioONE", 2.1f); // Turn off after 0.9s
                 break;
             case 2:
                 AudioTWO.SetActive(true);
+                Invoke("EndAudioTWO", 2.3f); // Turn off after 1s
                 break;
-
-                // Turn off after 0.5s
-                Invoke("EndAudio", 0.5f);
-        }
-
-    }
-        void EndAudio()
-        {
-            // for simplicity set both with 0 
-            AudioONE.SetActive(false);
-            AudioTWO.SetActive(false);
         }
     }
 
+    void EndAudioONE()
+    {
+        AudioONE.SetActive(false);
+    }
+
+    void EndAudioTWO()
+    { 
+        AudioTWO.SetActive(false);
+    }
+}
