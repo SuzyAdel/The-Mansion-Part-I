@@ -58,3 +58,20 @@ made it slightly overlapping
 ![image](https://github.com/user-attachments/assets/68ddab96-d5ff-4088-be00-9d80bfb1b972)
 
 ![image](https://github.com/user-attachments/assets/9be33f65-b081-4c50-9e63-0cd147d05815)
+
+
+# Grass 
+
+# Rocks 
+
+# Mansion 
+
+# Fence
+
+# Gates
+
+# Sound 
+
+# Arrow 
+
+
