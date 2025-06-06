@@ -1,5 +1,6 @@
 // YouTube Tutorial Refrence: https://www.youtube.com/watch?v=8b1a9c4d2f0
-// plus my tweaks , flickering , 2 audios , directional light detials , timmer, sound delay  
+// plus my tweaks , flickering , 2 audios ,
+// directional light detials , timmer, sound delay , soft fade out   
 using UnityEngine;
 using System.Collections;
 
@@ -68,27 +69,34 @@ public class LightiningController : MonoBehaviour
         // Flickering effect based on lightning type
         switch (type)
         {
-            case 1: // Slowest flicker
-                lightObject.SetActive(true);
-                yield return new WaitForSeconds(0.1f);
-                lightObject.SetActive(false);
-                yield return new WaitForSeconds(0.05f);
-                lightObject.SetActive(true);
-                yield return new WaitForSeconds(0.15f);
+            case 1: // Slowest flicker - 8 flashes
+                for (int i = 0; i < 8; i++)
+                {
+                    lightObject.SetActive(true);
+                    yield return new WaitForSeconds(0.07f);
+                    lightObject.SetActive(false);
+                    yield return new WaitForSeconds(0.05f);
+                }
                 break;
 
-            case 2: // Medium flicker
-                lightObject.SetActive(true);
-                yield return new WaitForSeconds(0.08f);
-                lightObject.SetActive(false);
-                yield return new WaitForSeconds(0.03f);
-                lightObject.SetActive(true);
-                yield return new WaitForSeconds(0.07f);
+            case 2: // Medium flicker - 6 flashes
+                for (int i = 0; i < 6; i++)
+                {
+                    lightObject.SetActive(true);
+                    yield return new WaitForSeconds(0.05f);
+                    lightObject.SetActive(false);
+                    yield return new WaitForSeconds(0.04f);
+                }
                 break;
 
-            case 3: // Quick burst
-                lightObject.SetActive(true);
-                yield return new WaitForSeconds(0.06f);
+            case 3: // Quick burst - 3 flashes
+                for (int i = 0; i < 3; i++)
+                {
+                    lightObject.SetActive(true);
+                    yield return new WaitForSeconds(0.04f);
+                    lightObject.SetActive(false);
+                    yield return new WaitForSeconds(0.03f);
+                }
                 break;
         }
 
@@ -121,11 +129,39 @@ public class LightiningController : MonoBehaviour
 
     void EndAudioONE()
     {
-        AudioONE.SetActive(false);
+        StartCoroutine(FadeOut(AudioONE, 0.3f));
     }
 
     void EndAudioTWO()
-    { 
-        AudioTWO.SetActive(false);
+    {
+        StartCoroutine(FadeOut(AudioTWO, 0.3f));
     }
+
+    IEnumerator FadeOut(GameObject audioObject, float fadeDuration)
+    {
+        AudioSource source = audioObject.GetComponent<AudioSource>();
+        if (source == null)
+        {
+            audioObject.SetActive(false);
+            yield break;
+        }
+
+        float startVolume = source.volume;
+        float time = 0f;
+
+        while (time < fadeDuration)
+        {
+            time += Time.deltaTime;
+            source.volume = Mathf.Lerp(startVolume, 0f, time / fadeDuration);
+            yield return null;
+        }
+
+        source.Stop();
+        source.volume = startVolume;
+        audioObject.SetActive(false);
+    }
+
+    // Legacy instant-off method (commented out for fade transition)
+    // void EndAudioONE() { AudioONE.SetActive(false); }
+    // void EndAudioTWO() { AudioTWO.SetActive(false); }
 }
