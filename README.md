@@ -61,7 +61,8 @@ made it slightly overlapping
 
 
 # Grass 
-to allow wind 
+1. to allow wind i had to change to grass after picking edit material
+2. added terrian wind tools 
 ![image](https://github.com/user-attachments/assets/939783f3-4f1a-4e8b-9ef0-05f989b19191)
 
 ![image](https://github.com/user-attachments/assets/27b8cc9f-c784-47d9-bb8f-a3b01c59c9e5)
@@ -73,6 +74,8 @@ to allow wind
 ![image](https://github.com/user-attachments/assets/cd5a871d-6a57-49b2-8f0d-9f296b493b26)
 
 # Rocks 
+1. to spwan 150 rocks randomly from 3 , i created a rock manger
+2. then attached script 'RockSpawner'
 ![image](https://github.com/user-attachments/assets/9c22f114-f444-4bd7-aaa6-20c0c75376cb)
 
 # Mansion 
