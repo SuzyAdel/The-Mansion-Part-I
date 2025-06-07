@@ -61,7 +61,11 @@ made it slightly overlapping
 
 
 # Grass 
-![image](https://github.com/user-attachments/assets/fd8cc8ad-0fec-4092-9b8e-73ee86aaf9c5)
+to allow wind 
+![image](https://github.com/user-attachments/assets/939783f3-4f1a-4e8b-9ef0-05f989b19191)
+
+![image](https://github.com/user-attachments/assets/27b8cc9f-c784-47d9-bb8f-a3b01c59c9e5)
+
 
 ![image](https://github.com/user-attachments/assets/c06cdca1-a849-4326-b161-1a76a82c6242)
 
