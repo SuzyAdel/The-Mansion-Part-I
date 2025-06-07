@@ -96,6 +96,13 @@ made it slightly overlapping
 ![image](https://github.com/user-attachments/assets/131e9713-da9c-4965-bea3-ceb574d370e8)
 ![image](https://github.com/user-attachments/assets/053b97e3-f47c-45c0-b0a1-39c902dfa415)
 ![image](https://github.com/user-attachments/assets/73af3940-ab1a-4d6f-96a6-5f372677b3b3)
+1. colider
+2. nav mech obsticle
+3. renderer for shadow
+
+![image](https://github.com/user-attachments/assets/596e5037-3aa4-4a8b-a058-76980307ed5e)
+
+
 
 # Sound 
 
