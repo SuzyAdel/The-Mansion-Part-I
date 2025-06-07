@@ -1,7 +1,9 @@
-﻿using UnityEngine;
+using UnityEngine;
 
 public class OakTreeSpawner : MonoBehaviour
 {
+    public Transform treeParent; //New parent field, to easly hide in inspecctor 
+
     public GameObject oakTreePrefab;
     public Terrain terrain;
     public int numberOfTrees = 500;
@@ -41,9 +43,13 @@ public class OakTreeSpawner : MonoBehaviour
 
             //Debug.Log($"Trying spawn #{i + 1} at {spawnPos}");
 
-            Instantiate(oakTreePrefab, spawnPos, Quaternion.identity);
-        }
+            GameObject tree = Instantiate(oakTreePrefab, spawnPos, Quaternion.identity);
 
-       // Debug.Log($"✅ Oak Trees Spawned: {numberOfTrees}");
+            if (treeParent != null)
+                tree.transform.parent = treeParent; // Parent assignment
+        }
+    
+
+         Debug.Log($" Oak Trees Spawned: {numberOfTrees}");
     }
 }
