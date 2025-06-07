@@ -79,10 +79,23 @@ made it slightly overlapping
 ![image](https://github.com/user-attachments/assets/9c22f114-f444-4bd7-aaa6-20c0c75376cb)
 
 # Mansion 
+1. sclae and rotate
+2. light spot 
+![image](https://github.com/user-attachments/assets/84002f3b-d48b-414d-b825-5a644c18c711)
+
+![image](https://github.com/user-attachments/assets/472b61c6-d7bb-4e05-a50d-56eb626313e9)
+
 
 # Fence
+1. scale the gate
+2. 
+
+![image](https://github.com/user-attachments/assets/04032cce-1ae6-4501-bde7-d37b12a1d797)
 
 # Gates
+![image](https://github.com/user-attachments/assets/131e9713-da9c-4965-bea3-ceb574d370e8)
+![image](https://github.com/user-attachments/assets/053b97e3-f47c-45c0-b0a1-39c902dfa415)
+![image](https://github.com/user-attachments/assets/73af3940-ab1a-4d6f-96a6-5f372677b3b3)
 
 # Sound 
 
