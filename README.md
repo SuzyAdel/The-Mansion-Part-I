@@ -112,5 +112,36 @@ made it slightly overlapping
 ![image](https://github.com/user-attachments/assets/e31e5b12-7ed6-49d1-865d-01d90327616f)
 
 # Arrow 
+![image](https://github.com/user-attachments/assets/6c209fef-051f-4785-a976-3b31ac7af87c)
 
+![image](https://github.com/user-attachments/assets/9e6d6d83-5d91-4b15-98f8-db78afcab843)
+
+TAB 
+1. CHANGED TO OLD SETTINGS
+2. HANDELED ON IN CODE
+   ![image](https://github.com/user-attachments/assets/ca540789-87d5-4619-81b8-974797159677)
+error: toggles in on off
+
+![image](https://github.com/user-attachments/assets/e573bb55-a94a-4ada-be90-b600f702e3ba)
+error: switchs off and thats it 
+
+fix: do not fully disable , just visually hide it 
+plus less redundant code 
+![image](https://github.com/user-attachments/assets/56dea863-ddc5-48f7-8cb4-c4830bd9d642)
+
+
+
+# Rock
+
+# HUD on Screen 
+
+# Detective 
+
+# Spider 
+
+# Cooper
+
+# Checks 
+
+# 7Antafa w game dev update 
 
