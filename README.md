@@ -132,6 +132,19 @@ plus less redundant code
 
 # Crosshair and first person Camera 
 
+1. tagged the body parts and hands 
+2. turned the vody parts invisible and render shadows only
+3. tried putting them in a layer and viewing the hand layer but then it wouldnt as unchecking it in the culling mask would make the shadows also impossible to see
+4. made sure there is a  60 degrree limitation by code:
+   - xRotation -= mouseY;                                 // invert Y
+   -xRotation = Mathf.Clamp(xRotation, -60f, 60f);       // clamp to ±60°
+5. added the crosshair and made it scalble with any screen type and scaled to desktop size  
+![image](https://github.com/user-attachments/assets/a51d0b03-8530-4ccd-b70b-fc2f60807ba9)
+
+![image](https://github.com/user-attachments/assets/4404cf96-8f3e-453f-903d-55f5c3117df8)
+
+![image](https://github.com/user-attachments/assets/645035ca-ff4b-4845-aa09-ad6377b484dd)
+
 # Rock
 
 # HUD on Screen 
