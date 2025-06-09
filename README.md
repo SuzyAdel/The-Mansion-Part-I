@@ -138,7 +138,10 @@ plus less redundant code
 4. made sure there is a  60 degrree limitation by code:
    - xRotation -= mouseY;                                 // invert Y
    -xRotation = Mathf.Clamp(xRotation, -60f, 60f);       // clamp to ±60°
-5. added the crosshair and made it scalble with any screen type and scaled to desktop size  
+5. added the crosshair and made it scalble with any screen type and scaled to desktop size
+
+![image](https://github.com/user-attachments/assets/4bd1b4c3-676f-4362-99ab-b7635178b365)
+
 ![image](https://github.com/user-attachments/assets/a51d0b03-8530-4ccd-b70b-fc2f60807ba9)
 
 ![image](https://github.com/user-attachments/assets/4404cf96-8f3e-453f-903d-55f5c3117df8)
