@@ -161,8 +161,11 @@ scripts
 1. added the shatter animation and sound in the `RockProjectile` script 
 ![image](https://github.com/user-attachments/assets/f7142d0a-8070-414b-aaf0-993e5f9f3456)
 
-2. 
+2. addded `RockThrower` to player to add throw and pick up logic
+   
+![image](https://github.com/user-attachments/assets/f7ba9b49-7593-4c55-9421-1791e90f46ad)
 
+3. 
 
 
 # HUD on Screen 
