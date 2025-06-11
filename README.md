@@ -149,7 +149,15 @@ plus less redundant code
 ![image](https://github.com/user-attachments/assets/645035ca-ff4b-4845-aa09-ad6377b484dd)
 
 # Rock
-..
+scripts 
+| Functionality                          | Script Component                  | Notes                                                                 |
+| -------------------------------------- | --------------------------------- | --------------------------------------------------------------------- |
+| Track and update number of rocks       | `RockInventory`                   | Attached to the player                                                |
+| Detect left-click & throw rock forward | `RockThrower`                     | Uses camera’s forward direction to throw                              |
+| Make rock fly & play shatter on impact | `RockProjectile`                  | Attached to the projectile prefab                                     |
+| Play shatter **sound** & **animation** | `RockProjectile`                  | Triggered via `Animator.SetTrigger()` and `AudioSource.PlayOneShot()` |
+| Refill inventory with right-click      | *(optional: `RockPickup` script)* | Placed on terrain rocks, can be added later                           |
+
 
 # HUD on Screen 
 
