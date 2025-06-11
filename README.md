@@ -158,6 +158,12 @@ scripts
 | Play shatter **sound** & **animation** | `RockProjectile`                  | Triggered via `Animator.SetTrigger()` and `AudioSource.PlayOneShot()` |
 | Refill inventory with right-click      | *(optional: `RockPickup` script)* | Placed on terrain rocks, can be added later                           |
 
+1. added the shatter animation and sound in the `RockProjectile` script 
+![image](https://github.com/user-attachments/assets/f7142d0a-8070-414b-aaf0-993e5f9f3456)
+
+2. 
+
+
 
 # HUD on Screen 
 
