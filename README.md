@@ -52,12 +52,16 @@ made it slightly overlapping
 
 # Key & Magical circle 
 1. down scaled the key and increased the circle sclae
-2. creTated a key controller and attached script 'Key Controller' to put on sucessfull point and checks angle 
+2. creTated a key controller and attached script 'Key Controller' to put on sucessfull point and checks angle
+3. mage animation extra to give interactivity
+ 
 ![image](https://github.com/user-attachments/assets/876ad7aa-548e-47df-ae48-cac5ab069bd7)
 
 ![image](https://github.com/user-attachments/assets/68ddab96-d5ff-4088-be00-9d80bfb1b972)
 
 ![image](https://github.com/user-attachments/assets/9be33f65-b081-4c50-9e63-0cd147d05815)
+
+![image](https://github.com/user-attachments/assets/0f5f7dbf-d08b-4716-af2a-1da908dd8189)
 
 
 # Grass 
