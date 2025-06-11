@@ -53,7 +53,7 @@ made it slightly overlapping
 # Key & Magical circle 
 1. down scaled the key and increased the circle sclae
 2. creTated a key controller and attached script 'Key Controller' to put on sucessfull point and checks angle
-3. mage animation extra to give interactivity
+3. made animation extra to give dimention to the game , rotation and postion 
  
 ![image](https://github.com/user-attachments/assets/876ad7aa-548e-47df-ae48-cac5ab069bd7)
 
@@ -61,7 +61,7 @@ made it slightly overlapping
 
 ![image](https://github.com/user-attachments/assets/9be33f65-b081-4c50-9e63-0cd147d05815)
 
-![image](https://github.com/user-attachments/assets/0f5f7dbf-d08b-4716-af2a-1da908dd8189)
+![image](https://github.com/user-attachments/assets/ea8756f5-62f3-4cc4-ae02-809952e9970a)
 
 
 # Grass 
