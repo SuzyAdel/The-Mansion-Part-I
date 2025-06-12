@@ -173,10 +173,13 @@ scripts
 
 
 # HUD on Screen 
-
+1. revised
+2. 
 # Detective 
-
-# Spider 
+1. normal animator
+2. 
+# Spider
+1. nav mesh agent 
 
 # Cooper
 
