@@ -182,8 +182,16 @@ scripts
 2. 
    
 # Detective 
-1. normal animator
+1. normal animator, blend tree for walk and run , idle and throw normal states
+2. rename the animations to be able to easily diferenciate
+3. fixed the rigging , humaniod , and avtar from this model 
+4. checked the avtar t pose to make sure there is no foot famus bug
+5. 
 
+![image](https://github.com/user-attachments/assets/2e16b2dd-349c-4322-972e-cfeb71be1c26)
+
+
+![image](https://github.com/user-attachments/assets/127625f1-06ef-43e3-b8b9-92d95979fdec)
 
 # Spider
 1. nav mesh agent 
