@@ -189,11 +189,16 @@ scripts
 5. removed all the has exit time
 6. added a 'ThrowForce' event send int=1 at the relasing secound in the throw animation
 7. and 'ThrowForce' event send int=0 at the rest arm position secound in the throw animation
+8. add move logic integrating both 
 
 ![image](https://github.com/user-attachments/assets/2e16b2dd-349c-4322-972e-cfeb71be1c26)
 
 
 ![image](https://github.com/user-attachments/assets/127625f1-06ef-43e3-b8b9-92d95979fdec)
+
+![image](https://github.com/user-attachments/assets/6c4dd7ae-7e0b-41cd-87af-24fb39acdd81)
+![image](https://github.com/user-attachments/assets/36fff669-e2a5-495f-b4ee-2b6ab3dd1483)
+
 
 # Spider
 1. nav mesh agent 
