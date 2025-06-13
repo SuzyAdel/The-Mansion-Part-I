@@ -210,7 +210,38 @@ Walk/Run  is a blend tree controlled by prameter Velocity and triggered by wlak 
 
 
 # Spider
-1. nav mesh agent 
+1. nav mesh agent on spider 
+2. nav mesh surface on terrian and bake 
+3. created animation
+
+
+
+
+
+
+![image](https://github.com/user-attachments/assets/edb1e4c3-3486-4440-ada1-83cafb91d31b)
+![image](https://github.com/user-attachments/assets/ff409431-1c33-440f-8231-b0e9c7613af9)
+
+Entry
+│
+├── Idle (Default State)
+│   ├── Transition to Walk (when "IsWalking" = true)
+│   
+│
+├── Walk/ Run (blend tree)
+│   ├── Transition to Idle (when "IsWalking" = false)
+│   
+│
+├── Attack (Any State → Attack, interruptible)
+│
+├── Hit (Any State → Hit, interruptible)
+│
+├── Death1 (Any State → Death1, non-interruptible)
+│
+└── Death2 (Any State → Death2, non-interruptible)
+
+![image](https://github.com/user-attachments/assets/2ed29217-38e0-4567-bce6-2633d7645ba0)
+
 
 # Cooper
 
