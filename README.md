@@ -190,6 +190,7 @@ scripts
 6. added a 'ThrowForce' event send int=1 at the relasing secound in the throw animation
 7. and 'ThrowForce' event send int=0 at the rest arm position secound in the throw animation
 8. add move logic script 'DetectiveMovement' integrating both using :
+
    | Component       | Assign This                                                         |
 | --------------- | ------------------------------------------------------------------- |
 | `Animator`      | Your detective's Animator                                           |
@@ -213,6 +214,8 @@ Walk/Run  is a blend tree controlled by prameter Velocity and triggered by wlak 
 1. nav mesh agent on spider 
 2. nav mesh surface on terrian and bake 
 3. created animation
+4.  created script 'Spider spawner'
+5.   created script 'Spider controller'
 
 
 
@@ -222,13 +225,15 @@ Walk/Run  is a blend tree controlled by prameter Velocity and triggered by wlak 
 ![image](https://github.com/user-attachments/assets/edb1e4c3-3486-4440-ada1-83cafb91d31b)
 ![image](https://github.com/user-attachments/assets/ff409431-1c33-440f-8231-b0e9c7613af9)
 
+
+
 Entry
 │
 ├── Idle (Default State)
 │   ├── Transition to Walk (when "IsWalking" = true)
 │   
 │
-├── Walk/ Run (blend tree)
+├── Walk/ Run (blend tree, velocity controlling)
 │   ├── Transition to Idle (when "IsWalking" = false)
 │   
 │
@@ -240,7 +245,47 @@ Entry
 │
 └── Death2 (Any State → Death2, non-interruptible)
 
+
+
+Entry
+│
+├── Idle (Default State)
+│   ├── Transition to Walk (when "IsWalking" = true)
+│   
+│
+├── Walk/Run (Blend Tree)
+│   ├── Parameter: "Velocity" (float)
+│   │   - 0-5: Walk animation
+│   │   - 5-10: Run animation
+│   ├── Transition to Idle (when both bools false)
+│   
+│
+├── Attack (Any State → Attack)
+│   ├── Settings:
+│   │   - Interruptible: Yes
+│   │   - Can Transition To Self: Yes
+│   │   - Has Exit Time: No
+│
+├── Hit (Any State → Hit)
+│   ├── Settings:
+│   │   - Interruptible: Yes
+│   │   - Can Transition To Self: Yes
+│   │   - Has Exit Time: No
+│
+├── Death1 (Any State → Death1)
+│   ├── Settings:
+│   │   - Interruptible: No
+│   │   - Can Transition To Self: No
+│   │   - Has Exit Time: No
+│
+└── Death2 (Any State → Death2)
+    ├── Settings:
+    │   - Interruptible: No
+    │   - Can Transition To Self: No
+    │   - Has Exit Time: No
+
 ![image](https://github.com/user-attachments/assets/2ed29217-38e0-4567-bce6-2633d7645ba0)
+![image](https://github.com/user-attachments/assets/6b617c55-e0c9-4a43-8033-cde449f7c9c4)
 
 
 # Cooper
