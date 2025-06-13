@@ -189,12 +189,21 @@ scripts
 5. removed all the has exit time
 6. added a 'ThrowForce' event send int=1 at the relasing secound in the throw animation
 7. and 'ThrowForce' event send int=0 at the rest arm position secound in the throw animation
-8. add move logic integrating both 
+8. add move logic script 'DetectiveMovement' integrating both using :
+   | Component       | Assign This                                                         |
+| --------------- | ------------------------------------------------------------------- |
+| `Animator`      | Your detective's Animator                                           |
+| `Rock Thrower`  | Reference to the same `RockThrower` script already on the character |
+| `AudioSource`   | Footstep AudioSource                                                |
+| `Footstep Clip` | The footstep sound                                                 |
+
 
 ![image](https://github.com/user-attachments/assets/2e16b2dd-349c-4322-972e-cfeb71be1c26)
 
 
 ![image](https://github.com/user-attachments/assets/127625f1-06ef-43e3-b8b9-92d95979fdec)
+
+Walk/Run  is a blend tree controlled by prameter Velocity and triggered by wlak true/false , and the throw is controlled by a bol throw true/false , and there is a ThrowForce event that sends an int 1 at peack of animation and another event 0 when the hand is back to body level to simulate when the throw should actually throw
 
 ![image](https://github.com/user-attachments/assets/6c4dd7ae-7e0b-41cd-87af-24fb39acdd81)
 ![image](https://github.com/user-attachments/assets/36fff669-e2a5-495f-b4ee-2b6ab3dd1483)
