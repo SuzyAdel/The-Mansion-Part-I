@@ -53,7 +53,8 @@ made it slightly overlapping
 # Key & Magical circle 
 1. down scaled the key and increased the circle sclae
 2. creTated a key controller and attached script 'Key Controller' to put on sucessfull point and checks angle
-3. made animation extra to give dimention to the game , rotation and postion 
+3. made animation extra to give dimention to the game , rotation and postion
+   
  
 ![image](https://github.com/user-attachments/assets/876ad7aa-548e-47df-ae48-cac5ab069bd7)
 
@@ -63,6 +64,7 @@ made it slightly overlapping
 
 ![image](https://github.com/user-attachments/assets/ea8756f5-62f3-4cc4-ae02-809952e9970a)
 
+![image](https://github.com/user-attachments/assets/de11ee73-ca7f-4150-bcf5-199e139ed40a)
 
 # Grass 
 1. to allow wind i had to change to grass after picking edit material
@@ -108,7 +110,10 @@ made it slightly overlapping
 2. nav mech obsticle
 3. renderer for shadow
 4. code for interation 'GatteInteraction'
+5. addded animation on trigger 
 ![image](https://github.com/user-attachments/assets/596e5037-3aa4-4a8b-a058-76980307ed5e)
+
+![image](https://github.com/user-attachments/assets/2ba3171d-10b9-4afc-9216-b8e292fc3099)
 
 
 
@@ -175,9 +180,11 @@ scripts
 # HUD on Screen 
 1. revised
 2. 
+   
 # Detective 
 1. normal animator
-2. 
+
+
 # Spider
 1. nav mesh agent 
 
