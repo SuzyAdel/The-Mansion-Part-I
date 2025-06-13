@@ -288,9 +288,22 @@ Entry
 ![image](https://github.com/user-attachments/assets/6b617c55-e0c9-4a43-8033-cde449f7c9c4)
 
 
-# Cooper
+#  BONUS :Cooper
+1. code
+2. code
+3. animator 
+
+
+![image](https://github.com/user-attachments/assets/bcaea6ce-3448-4837-a180-eccab4b6320d)
+
+![image](https://github.com/user-attachments/assets/ac9cca8d-836b-413a-b919-62f815be594e)
+
 
 # Checks 
-
+1. change camera to cenima machne
+2. add HUD
+3. check if
+  
+      
 # 7Antafa w game dev update 
 
