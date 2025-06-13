@@ -1,29 +1,30 @@
-﻿using UnityEngine;
+using UnityEngine;
 
 public class DetectiveMovement : MonoBehaviour
 {
     [Header("References")]
-    public Animator animator;                // Reference to the Animator component
-    public RockThrower rockThrower;          // Reference to the RockThrower script
-    public CharacterController characterController; // Reference to CharacterController
+    public Animator animator;
+    public RockThrower rockThrower;
+    public CharacterController characterController;
+    public AudioSource footstepAudioSource;  // For walk/run sounds default AudioSource
 
     [Header("Movement Settings")]
-    public float walkSpeed = 3f;             // Walking speed
-    public float runSpeed = 6f;              // Running speed
+    public float walkSpeed = 3f;
+    public float runSpeed = 6f;
+
+    [Header("Footstep Sounds")]
+    public AudioClip walkSound;  // Single walk sound
+    public AudioClip runSound;   // Single run sound
+    public float walkStepInterval = 0.5f;
+    public float runStepInterval = 0.3f;
+
+    [Header("Throw Sound")]
+    public AudioClip throwSound;  // Single throw sound
 
     private Vector3 movementInput;
     private bool isRunning = false;
-    private bool isThrowing = false;
     private float currentSpeed;
-
-    // use awake method to initialize components
-    private void Awake()
-    {
-        if (characterController == null)
-            characterController = GetComponent<CharacterController>();
-            
-        Cursor.lockState = CursorLockMode.Locked; // Lock cursor for gameplay
-    }
+    private float nextFootstepTime;
 
     // Start is called before the first frame update
     void Start()
@@ -34,7 +35,7 @@ public class DetectiveMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isThrowing) return;
+        //if (isThrowing) return;
 
         HandleMovementInput();
         HandleRunningInput();
@@ -58,9 +59,9 @@ public class DetectiveMovement : MonoBehaviour
 
     private void HandleThrowingInput() // Handles throwing input with Left Mouse Button
     {
-        if (Input.GetMouseButtonDown(0) && !isThrowing && rockThrower.currentRocks > 0)
+        if (Input.GetMouseButtonDown(0) && rockThrower.currentRocks > 0)// && !isThrowing removed 
         {
-            isThrowing = true;
+            //isThrowing = true; Remove isThrowing check to allow throwing while moving, and multiple throwing 
             animator.SetBool("Throw", true); // Start throw animation
         }
     }
@@ -74,8 +75,10 @@ public class DetectiveMovement : MonoBehaviour
     private void UpdateAnimator() // Updates animator parameters based on movement state
     {
         bool isMoving = movementInput.magnitude > 0.1f;
+        float speedPercent = isRunning ? 1f : 0.5f;
+        Debug.Log($"Movement: {isMoving}, Running: {isRunning}, Speed: {speedPercent}");
         animator.SetBool("Walk", isMoving);
-        animator.SetFloat("Velocity", isMoving ? (isRunning ? 1f : 0.5f) : 0f);
+        animator.SetFloat("Velocity", isMoving ? speedPercent : 0f);
     }
 
     // Called from animation at peak throw moment to actually throw the rock EVENT
@@ -83,6 +86,8 @@ public class DetectiveMovement : MonoBehaviour
     {
         if (trigger == 1 && rockThrower != null)
         {
+            if (throwSound != null)
+                footstepAudioSource.PlayOneShot(throwSound); //modified to play sound at throw peak
             rockThrower.ThrowRock(); // Delegate actual throw to RockThrower script
         }
     }
@@ -90,7 +95,25 @@ public class DetectiveMovement : MonoBehaviour
     // Called from animation when hand returns to side, EVENT 
     public void EndThrow()
     {
-        isThrowing = false;
+        //isThrowing = false;
         animator.SetBool("Throw", false); // Reset animation state
     }
+
+    public void PlayFootstep() // Called from animation event
+    {
+        if (Time.time > nextFootstepTime && footstepAudioSource != null)
+        {
+            if (isRunning && runSound != null)
+            {
+                footstepAudioSource.PlayOneShot(runSound);
+                nextFootstepTime = Time.time + runStepInterval;
+            }
+            else if (!isRunning && walkSound != null)
+            {
+                footstepAudioSource.PlayOneShot(walkSound);
+                nextFootstepTime = Time.time + walkStepInterval;
+            }
+        }
+    }
+
 }
