@@ -186,7 +186,9 @@ scripts
 2. rename the animations to be able to easily diferenciate
 3. fixed the rigging , humaniod , and avtar from this model 
 4. checked the avtar t pose to make sure there is no foot famus bug
-5. 
+5. removed all the has exit time
+6. added a 'ThrowForce' event send int=1 at the relasing secound in the throw animation
+7. and 'ThrowForce' event send int=0 at the rest arm position secound in the throw animation
 
 ![image](https://github.com/user-attachments/assets/2e16b2dd-349c-4322-972e-cfeb71be1c26)
 
