@@ -1,0 +1,148 @@
+using UnityEngine;
+using UnityEngine.AI;
+using System.Collections;
+
+// for garentueed spider movement and animation i must use NavMeshAgent and Animator components
+[RequireComponent(typeof(NavMeshAgent))]
+[RequireComponent(typeof(Animator))]
+public class SpiderController : MonoBehaviour
+{
+    public enum SpiderType { Black, Brown }// to pick in inspector 
+    public SpiderType spiderType;
+
+    [Header("References")]
+    public Transform player;  // drag the Detective here in inspector
+
+    [Header("Movement Settings")]
+    public float detectionRange = 100f; // how far the spider can detect the player, set in instructions 
+    public float attackRange = 30f; // how close the spider must be to attack, set in instructions
+    public float walkSpeed = 5f; // how fast the spider walks(agents speed) , set in instructions 
+    public float runSpeed = 10f;// how fast the spider runs(agents speed) , set in instructions
+
+    [Header("Combat Settings")]
+    public int blackSpiderHitsToDie = 2; // 2pts for black spider to die, set in instructions
+    public int brownSpiderHitsToDie = 1; // 1pt for brown spider to die, set in instructions
+    // to prevent multiple attacks in a short time, use a delay
+    public float minAttackDelay = 1f;
+    public float maxAttackDelay = 3f;
+
+    [Header("Audio Clips")]
+    public AudioClip spiderBiteSound;
+    public AudioClip hitSound;
+    //public AudioClip[] deathSounds; couldnt find reasonable death sound 
+
+    private NavMeshAgent agent;
+    private Animator animator;
+    private int currentHits; // to keep trak of the current hits the spider has taken(1/2)
+    private bool isDead = false;
+    private bool isAttacking = false;
+    private float nextAttackTime;
+    private string currentState = "";
+
+    void Start()
+    {
+        agent = GetComponent<NavMeshAgent>();
+        animator = GetComponent<Animator>();
+        currentHits = (spiderType == SpiderType.Black) ? blackSpiderHitsToDie : brownSpiderHitsToDie;
+        SetAnimationState("Idle");
+
+        if (player == null)
+            Debug.LogError("[Spider] Player not assigned in Inspector!");
+    }
+
+    void Update()
+    {
+        if (isDead || player == null) return; // if the spider is dead or player is not assigned, do nothing
+
+        float distance = Vector3.Distance(transform.position, player.position);
+        bool inRange = distance <= detectionRange; // if the player is within detection range 
+
+        if (inRange)
+        {
+            agent.SetDestination(player.position);
+
+            if (distance <= attackRange)
+            {
+                agent.speed = runSpeed;
+                SetAnimationState("Run");// move faster when close to player
+
+                if (!isAttacking && Time.time >= nextAttackTime)
+                    StartCoroutine(Attack()); // close enough to attack 
+            }
+            else
+            {
+                agent.speed = walkSpeed;
+                SetAnimationState("Walk"); // walk towards the player untile in attack range
+            }
+        }
+        else // too far 
+        {
+            agent.ResetPath();
+            SetAnimationState("Idle");// stop moving if player is too far
+        }
+        // Debugging output to check velocity and state every 60 frames
+        //if (Time.frameCount % 60 == 0)
+        //Debug.Log($"[Spider] Velocity: {agent.velocity.magnitude} | State: {currentState}");
+    }
+
+    void SetAnimationState(string newState)
+    {
+        if (currentState == newState) return;
+        // reset all animation states before setting the new one
+        animator.SetBool("IsWalking", false);
+        animator.SetBool("IsRunning", false);
+        // for debugging use
+        switch (newState)
+        {
+            case "Walk": animator.SetBool("IsWalking", true); break;
+            case "Run": animator.SetBool("IsRunning", true); break;
+            case "Idle": break;
+        }
+
+        //Debug.Log($"[Spider] Animation State changed to: {newState}");
+        currentState = newState;
+    }
+
+    // the co routine when close 
+    IEnumerator Attack()
+    {
+        isAttacking = true;
+        nextAttackTime = Time.time + Random.Range(minAttackDelay, maxAttackDelay);//wait a random pause
+        animator.SetTrigger("Attack");
+        yield return new WaitForSeconds(0.5f); // // wait for the attack animation to play
+
+        if (!isDead && spiderBiteSound != null)
+            AudioSource.PlayClipAtPoint(spiderBiteSound, transform.position);// play the bite sound
+
+        isAttacking = false;
+    }
+
+    public void TakeHit() //spider shot 
+    {
+        if (isDead) return;
+        currentHits--;// starts with max according to its colour 
+        animator.SetTrigger("Hit");
+
+        if (hitSound != null)
+            AudioSource.PlayClipAtPoint(hitSound, transform.position);// play the hit sound
+
+        if (currentHits <= 0)// finshed lives 
+            Die();
+    }
+
+    void Die()
+    {
+        isDead = true;
+        agent.isStopped = true;
+        int deathAnimIndex = Random.Range(1, 3);
+        animator.SetTrigger($"Death{deathAnimIndex}");
+
+        // if (deathSounds != null && deathSounds.Length > 0)
+        //AudioSource.PlayClipAtPoint(deathSounds[Random.Range(0, deathSounds.Length)], transform.position);
+
+        Destroy(agent); // destroy the NavMeshAgent to stop movement
+        Destroy(GetComponent<Collider>()); // destroy the collider to prevent further interactions
+                                           // delete the spider GameObject after 3 seconds to allow the death animation to fully play
+        Destroy(gameObject, 3f);
+    }
+}
