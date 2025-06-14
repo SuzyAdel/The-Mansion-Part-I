@@ -298,11 +298,34 @@ Entry
 
 ![image](https://github.com/user-attachments/assets/ac9cca8d-836b-413a-b919-62f815be594e)
 
+# UI 
+1. intalled the text pro packagdes 
+![image](https://github.com/user-attachments/assets/2d606e23-e797-4deb-ad5e-ba9ad752d4a3)
+2. creadted setup 
+![image](https://github.com/user-attachments/assets/4bfdbe60-ecb4-4314-943c-47a912b9cbab)
+3. created 2 graident colors for Stamina and health 
+![image](https://github.com/user-attachments/assets/638311f6-74f3-43bd-b6bf-21098334318f)
+![image](https://github.com/user-attachments/assets/7b667890-baa9-487e-8138-6bf50b0a6abe)
+4. Final UI 
+![image](https://github.com/user-attachments/assets/7a22a835-138b-4385-931e-6b55101951ba)
+
 
 # Checks 
-1. change camera to cenima machne
-2. add HUD
-3. check if
+🎯 Immediate Action Plan (Step-by-step)
+1.	Start with Spider-related scripts (SpiderController, SpiderSpawner, SpiderAnimationTester)
+➤ Diagnose animation transitions, NavMeshAgent setup, attack triggers
+2.	Then move to Cooper scripts (CooperController, CooperInputHandler)
+➤ Check distance logic, input handling, bark on key find
+3.	Follow with DetectiveMovement, Health, PlayerStamina
+➤ Fix stamina drain, jump cost, and health-check-triggered restart
+4.	Then UI/HUD logic
+➤ Ensure all values dynamically update based on game events
+5.	NavMesh final pass
+➤ Confirm islands are baked, agents assigned, obstacles tagged
+6.	Optional Bonus Checks
+➤ Thunder/light delay logic
+➤ Wind affecting trees visuall
+
   
       
 # 7Antafa w game dev update 
