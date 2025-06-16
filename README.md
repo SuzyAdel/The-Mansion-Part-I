@@ -326,7 +326,9 @@ Entry
 ➤ Thunder/light delay logic
 ➤ Wind affecting trees visuall
 
-  
+1.fixed camera point of view
+2. made bark frequently even when searching , calling sound once and more smooth walk 
+3. fixing key to genrate clone on terrian 
       
 # 7Antafa w game dev update 
 
