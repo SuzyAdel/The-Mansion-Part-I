@@ -329,6 +329,8 @@ Entry
 1.fixed camera point of view
 2. made bark frequently even when searching , calling sound once and more smooth walk 
 3. fixing key to genrate clone on terrian 
-      
+4. try to inegrate the entire ui sytem 
+5. integrate the stamena and jump logic 
+
 # 7Antafa w game dev update 
 
