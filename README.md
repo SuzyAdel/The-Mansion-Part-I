@@ -328,9 +328,13 @@ Entry
 
 1. fixed camera point of view
 2.  made bark frequently even when searching , calling sound once and more smooth walk
-3.   ixing key to genrate clone on terrian
-4.    try to inegrate the entire ui sytem
-5.integrate the stamena and jump logic 
+3. fixing key to genrate clone on terrian
+4. try to inegrate the entire ui sytem
+5. integrate the stamena and jump logic
+6. found bugs in throwing rock , no prefab and instant disaapper
+7. animation full stopped after throwing the rock , try fix
+8. created win and lose pannels
+9. created try again putton 
 
 # 7Antafa w game dev update 
 
