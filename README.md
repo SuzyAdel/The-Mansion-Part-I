@@ -338,5 +338,6 @@ Entry
 
 # 7Antafa w game dev update 
 ![image](https://github.com/user-attachments/assets/b39abd34-7a14-4477-9c59-6904ee55725c)
-![image](https://github.com/user-attachments/assets/c422c22d-992c-4863-bd40-e6b62067a6c0)
+![image](https://github.com/user-attachments/assets/cfcb8a4b-1f34-499b-9b4d-7ccc8a082470)
+
 
