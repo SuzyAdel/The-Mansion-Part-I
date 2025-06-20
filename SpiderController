@@ -166,9 +166,15 @@ public class SpiderController : MonoBehaviour
             int damage = (spiderType == SpiderType.Black) ? 2 : 1;
             playerHealth.TakeDamage(damage);
         }
+        // Update force Spider to cool down by returning to idle  
+        SetAnimationState("Idle"); // set to idle after attack 
+        yield return new WaitForSeconds(3f); // wait for the attack animation to finish
 
+        // Reset the attacking state after the attack is done
         isAttacking = false;
-        //   yield return new WaitForSeconds(Random.Range(3, 6)); //
+        //   yield return new WaitForSeconds(Random.Range(3, 6)); 
+
+        
     }
 
     public void TakeHit() //spider shot 
@@ -206,6 +212,7 @@ public class SpiderController : MonoBehaviour
 // fixed the walk and run animations to use the blend tree (updated SetAnimationState(),
 // added Idle state to the animation system,
 // and ensured the spider looks at the player when close enough 
+// added cool time after attaxk 
 
 
 // added a check for the spider's velocity to update the animator,
